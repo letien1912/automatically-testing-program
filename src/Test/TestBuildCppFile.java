@@ -20,6 +20,7 @@ public class TestBuildCppFile {
         while ((error = stdError.readLine()) != null) {
 			System.out.println(error);
 		}
+        
         /*Read file*/
         String testinput = null;
         String input = "";

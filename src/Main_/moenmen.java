@@ -1,4 +1,7 @@
-package Test;
+package Main_;
+
+import Test.CompareProblemAnswer;
+import Test.CompileProblemAnswer;
 
 public class moenmen {
 	public static void main(String[] args) {
