@@ -1,7 +1,7 @@
 package Main_;
 
-import Test.CompareProblemAnswer;
-import Test.CompileProblemAnswer;
+import Utilities.CompareProblemAnswer;
+import Utilities.CompileProblemAnswer;
 
 public class moenmen {
 	public static void main(String[] args) {

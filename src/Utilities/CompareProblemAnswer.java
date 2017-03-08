@@ -1,4 +1,4 @@
-package Test;
+package Utilities;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,8 +18,8 @@ import java.util.concurrent.TimeoutException;
 
 public class CompareProblemAnswer {
 	public static String ProblemUrl = "Problem";
-	public static String InputUrl = "Input";
-	public static String OutputUrl = "Output";
+	private static String InputUrl = "Input";
+	private static String OutputUrl = "Output";
 	private static String EXE = ".exe";
 	private static int DEFAULT_TIME_LIMIT_MILISECONDS = 1000;
 	private int lengthOfTestCase = 0;
@@ -62,7 +62,6 @@ public class CompareProblemAnswer {
 				boolean result = CompareOutputPerTestCase(fileName, problemCodeName);
 				if (result)
 					++numberCorrectTest;
-
 			}
 		}
 	}
@@ -133,60 +132,6 @@ public class CompareProblemAnswer {
 		return output.equals(answer);
 	}
 
-	private boolean WriteInputTest(Process process) {
-		BufferedWriter bW = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
-		try {
-			String input = ReadInput(testcaseNumber);
-			bW.write(input);
-			bW.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		} finally {
-			try {
-				bW.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return true;
-	}
-
-	private String GetAnswerTest(Process process) {
-		String answer = "";
-		BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
-		String line = "";
-		try {
-			while ((line = br.readLine()) != null) {
-				answer += line;
-			}
-
-			/* some thing else */
-			/*
-			 * int waitFlag = -1 ; try { waitFlag = process.waitFor(); } catch
-			 * (InterruptedException e) { // TODO Auto-generated catch block
-			 * e.printStackTrace(); }// Wait to finish application // execution.
-			 * if (waitFlag == 0) { int returnVal = process.exitValue(); }
-			 */
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				br.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		// check time limit 
-//		long startTime = System.currentTimeMillis();
-//		long endTime   = System.currentTimeMillis();
-//		long totalTime = endTime - startTime;
-//		System.out.println("Time run = " + totalTime);
-		return answer;
-	}
-
 	private String ReadInput(String testcaseNumber) {
 		String input = "";
 		BufferedReader readTest;
@@ -224,7 +169,6 @@ public class CompareProblemAnswer {
 	}
 
 	class WriteInputTask implements Callable<Boolean> {
-
 		@Override
 		public Boolean call() throws Exception {
 			return WriteInputTest(process);
@@ -232,10 +176,61 @@ public class CompareProblemAnswer {
 	}
 
 	class GetAnswerTask implements Callable<String> {
-
 		@Override
 		public String call() throws Exception {
 			return GetAnswerTest(process);
 		}
+	}
+
+	private boolean WriteInputTest(Process process) {
+		BufferedWriter bW = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
+		try {
+			String input = ReadInput(testcaseNumber);
+			bW.write(input);
+			bW.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				bW.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return true;
+	}
+	private String GetAnswerTest(Process process) {
+		String answer = "";
+		BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+		String line = "";
+		try {
+			while ((line = br.readLine()) != null) {
+				answer += line;
+			}
+			/* some thing else */
+			/*
+			 * int waitFlag = -1 ; try { waitFlag = process.waitFor(); } catch
+			 * (InterruptedException e) { // TODO Auto-generated catch block
+			 * e.printStackTrace(); }// Wait to finish application // execution.
+			 * if (waitFlag == 0) { int returnVal = process.exitValue(); }
+			 */
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		// check time limit
+//		long startTime = System.currentTimeMillis();
+//		long endTime   = System.currentTimeMillis();
+//		long totalTime = endTime - startTime;
+//		System.out.println("Time run = " + totalTime);
+		return answer;
 	}
 }
