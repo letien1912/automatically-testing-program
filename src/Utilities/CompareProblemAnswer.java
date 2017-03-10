@@ -8,13 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 
 public class CompareProblemAnswer {
 	public static String ProblemUrl = "Problem";
@@ -22,6 +16,7 @@ public class CompareProblemAnswer {
 	private static String OutputUrl = "Output";
 	private static String EXE = ".exe";
 	private static int DEFAULT_TIME_LIMIT_MILISECONDS = 1000;
+	private static int MAX_NUMBER_THREAD = 20;
 	private int lengthOfTestCase = 0;
 	private int numberCorrectTest = 0;
 	private String problemCodeName;
@@ -88,8 +83,9 @@ public class CompareProblemAnswer {
 			e.printStackTrace();
 		}
 
-		ExecutorService executor = Executors.newSingleThreadExecutor();
+		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(MAX_NUMBER_THREAD);
 		Future<Boolean> futureWriteInput = executor.submit(new WriteInputTask());
+		System.out.println("count many executor is running "  + executor.getMaximumPoolSize());
 
 		Boolean isNotRuntimeError = false;
 		try {
@@ -105,6 +101,7 @@ public class CompareProblemAnswer {
 			futureWriteInput.cancel(true);
 			System.out.println("----- Runtime Error ----");
 		}
+
 		/* check if not found runtime error */
 		Future<String> futureAnswer = executor.submit(new GetAnswerTask());
 		if (isNotRuntimeError) {
@@ -129,6 +126,7 @@ public class CompareProblemAnswer {
 			System.out.println("===== No Output was Found =====");
 		
 		System.out.println();
+
 		return output.equals(answer);
 	}
 
