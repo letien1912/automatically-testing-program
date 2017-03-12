@@ -53,8 +53,6 @@ public class MainUI extends JPanel{
 		
 		add(pn);
 		
-		//pack();
-		
 		//event
 		
 		/*btnCreateContest.addActionListener(new ActionListener() {
@@ -79,7 +77,18 @@ public class MainUI extends JPanel{
 			}
 		});
 		
-		//btnLoadContest.addActionListener(this);
+		btnLoadContest.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JPanel loadContest = new LoadOnlineContestUI();
+				removeAll();
+				setLayout(new BorderLayout(0,0));
+				add(loadContest);
+				validate();			
+				repaint();
+			}
+		});
 		
 		btnListProblem.addActionListener(new ActionListener() {
 			

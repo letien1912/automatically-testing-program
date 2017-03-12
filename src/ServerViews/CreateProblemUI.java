@@ -40,7 +40,6 @@ public class CreateProblemUI extends JPanel {
 		JPanel pn = new JPanel();
 		pn.setLayout(new BoxLayout(pn, BoxLayout.Y_AXIS));
 
-		JLabel lblMabai;
 		JPanel pn1 = new JPanel();
 		JLabel lblMaBai;
 		pn1.add(lblMaBai = new JLabel("Mã bài: "));
@@ -54,7 +53,7 @@ public class CreateProblemUI extends JPanel {
 
 		JPanel pn2 = new JPanel();
 		JLabel lblDoKho;
-		pn2.add(lblDoKho = new JLabel("�?ộ khó: "));
+		pn2.add(lblDoKho = new JLabel("Độ khó: "));
 		pn2.add(txtDoKho = new JTextField(20));
 		JLabel lblDangBai;
 		pn2.add(lblDangBai = new JLabel("Dạng bài: "));
@@ -63,9 +62,9 @@ public class CreateProblemUI extends JPanel {
 		pn.add(pn2);
 
 		JPanel pn3 = new JPanel();
-		JLabel lblDebai;
-		pn3.add(lblDebai = new JLabel("�?�? bài: "));
-		txtDeBai = new JTextArea(10, 50);
+		JLabel lblDeBai;
+		pn3.add(lblDeBai = new JLabel("Đề bài: "));
+		txtDeBai = new JTextArea(10, 46);
 		JScrollPane jsb = new JScrollPane(txtDeBai);
 		pn3.add(jsb);
 
@@ -96,83 +95,89 @@ public class CreateProblemUI extends JPanel {
 		});
 
 		pn.add(pn4);
-		
+
 		JPanel pn5 = new JPanel();
 		JLabel lblInput;
 		pn5.add(lblInput = new JLabel("Input: "));
 		pn5.add(btnInput = new JButton("Browse"));
 		pn5.add(lblInputNotify = new JLabel("No Folder selected"));
-		
+
 		btnInput.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser folderChoose = new JFileChooser();
 				folderChoose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				folderChoose.showSaveDialog(null);
 				File folder = folderChoose.getCurrentDirectory();
-				lblInputNotify.setText(folder+" ");
+				lblInputNotify.setText(folder + " ");
 			}
 		});
-		
+
 		JLabel lblOutput;
 		pn5.add(lblOutput = new JLabel("Output: "));
 		pn5.add(btnOutput = new JButton("Browse"));
 		pn5.add(lblOutputNotify = new JLabel("No Folder selected"));
-		
+
 		btnOutput.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser folderChoose = new JFileChooser();
 				folderChoose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				folderChoose.showSaveDialog(null);
 				File folder = folderChoose.getCurrentDirectory();
-				lblInputNotify.setText(folder+" ");
+				lblOutputNotify.setText(folder + " ");
 			}
 		});
-		
+
 		pn.add(pn5);
-		
+
 		JPanel pn6 = new JPanel();
 		pn6.add(btnCreateProblem = new JButton("Create Problem"));
 		pn6.add(btnReset = new JButton("Reset"));
 		pn6.add(btnCancel = new JButton("Cancel"));
-		
+
 		btnCreateProblem.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// CreateProblem
-				
+
 			}
 		});
-		
+
 		btnReset.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				resetText();
 			}
 		});
-		
+
 		btnCancel.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JPanel main = new MainUI();
 				removeAll();
-				setLayout(new BorderLayout(0,0));
+				setLayout(new BorderLayout(0, 0));
 				add(main);
 				validate();
 				repaint();
 			}
 		});
-		
+
 		pn.add(pn6);
 		
 		add(pn);
-
+		
+		lblDeBai.setPreferredSize(lblDoKho.getPreferredSize());
+		lblMaBai.setPreferredSize(lblDoKho.getPreferredSize());
+		lblInput.setPreferredSize(lblDoKho.getPreferredSize());
+		
+		lblTenBai.setPreferredSize(lblDangBai.getPreferredSize());
+		lblOutput.setPreferredSize(lblDangBai.getPreferredSize());
 	}
 
 	protected void resetText() {
