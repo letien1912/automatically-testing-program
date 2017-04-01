@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+org.jboss.tools.foundation.core.credentials.CredentialsModel/access.redhat.com/default.user=lldtien
+org.jboss.tools.foundation.core.credentials.CredentialsModel/access.redhat.com/id=access.redhat.com
+org.jboss.tools.foundation.core.credentials.CredentialsModel/access.redhat.com/name=access.redhat.com
+org.jboss.tools.foundation.core.credentials.CredentialsModel/access.redhat.com/removable=false
+org.jboss.tools.foundation.core.credentials.CredentialsModel/access.redhat.com/user.list=lldtien
+org.jboss.tools.foundation.core.credentials.CredentialsModel/access.redhat.com/user.list.prompted=
+org.jboss.tools.foundation.core.credentials.CredentialsModel/jboss.org/default.user=lldtien
+org.jboss.tools.foundation.core.credentials.CredentialsModel/jboss.org/id=jboss.org
+org.jboss.tools.foundation.core.credentials.CredentialsModel/jboss.org/name=jboss.org
+org.jboss.tools.foundation.core.credentials.CredentialsModel/jboss.org/removable=false
+org.jboss.tools.foundation.core.credentials.CredentialsModel/jboss.org/user.list=lldtien
+org.jboss.tools.foundation.core.credentials.CredentialsModel/jboss.org/user.list.prompted=
