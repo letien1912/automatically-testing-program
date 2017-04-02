@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Entities&apos; to &apos;ATP-jpa&apos;" description="Rename resource &apos;Entities&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Entities" name="ATP-jpa" stamp="1491124844468" updateReferences="true"/>
+</session>

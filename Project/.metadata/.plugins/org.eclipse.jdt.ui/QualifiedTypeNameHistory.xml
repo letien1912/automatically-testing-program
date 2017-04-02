@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.sun.istack.internal.Nullable"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="Entities.Teacher"/>
+<fullyQualifiedTypeName name="Entities.Student"/>
+<fullyQualifiedTypeName name="Entities.Student_ContestDetail"/>
+<fullyQualifiedTypeName name="javax.inject.Named"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="Entities.Contest"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="Entities.Problem"/>
+</qualifiedTypeNameHistroy>

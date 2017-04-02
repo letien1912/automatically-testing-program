@@ -1,0 +1,87 @@
+package Entities;
+
+import java.io.Serializable;
+import java.lang.String;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Contest
+ *
+ */
+@Entity
+
+public class Contest implements Serializable {
+
+	   
+	@Id @GeneratedValue
+	private int ContestId;
+	@Column(nullable = false)
+	private String ContestName;
+	@Column(nullable = false)
+	private String CreatedTime;
+	private int TotalSubmission;
+	private int TotalCorrectSubmission;
+	private String Status;
+	private static final long serialVersionUID = 1L;
+
+	public Contest() {
+		super();
+	}   
+	
+	
+	public Contest(int contestId, String contestName, String createdTime, int totalSubmission,
+			int totalCorrectSubmission, String status) {
+		super();
+		ContestId = contestId;
+		ContestName = contestName;
+		CreatedTime = createdTime;
+		TotalSubmission = totalSubmission;
+		TotalCorrectSubmission = totalCorrectSubmission;
+		Status = status;
+	}
+
+
+	public int getContestId() {
+		return this.ContestId;
+	}
+
+	public void setContestId(int ContestId) {
+		this.ContestId = ContestId;
+	}   
+	public String getContestName() {
+		return this.ContestName;
+	}
+
+	public void setContestName(String ContestName) {
+		this.ContestName = ContestName;
+	}   
+	public String getCreatedTime() {
+		return this.CreatedTime;
+	}
+
+	public void setCreatedTime(String CreatedTime) {
+		this.CreatedTime = CreatedTime;
+	}   
+	public int getTotalSubmission() {
+		return this.TotalSubmission;
+	}
+
+	public void setTotalSubmission(int TotalSubmission) {
+		this.TotalSubmission = TotalSubmission;
+	}   
+	public int getTotalCorrectSubmission() {
+		return this.TotalCorrectSubmission;
+	}
+
+	public void setTotalCorrectSubmission(int TotalCorrectSubmission) {
+		this.TotalCorrectSubmission = TotalCorrectSubmission;
+	}   
+	public String getStatus() {
+		return this.Status;
+	}
+
+	public void setStatus(String Status) {
+		this.Status = Status;
+	}
+   
+}
