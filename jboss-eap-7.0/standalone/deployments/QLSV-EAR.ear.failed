@@ -1,0 +1,4 @@
+"{\"WFLYCTL0180: Services with missing/unavailable dependencies\" => [
+    \"jboss.persistenceunit.\\\"QLSV-EAR.ear#QLSV-JPA\\\" is missing [jboss.naming.context.java.qlsv]\",
+    \"jboss.persistenceunit.\\\"QLSV-EAR.ear#QLSV-JPA\\\".__FIRST_PHASE__ is missing [jboss.naming.context.java.qlsv]\"
+]}"
