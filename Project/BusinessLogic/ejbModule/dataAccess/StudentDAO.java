@@ -23,16 +23,6 @@ public class StudentDAO implements StudentDAORemote {
         // TODO Auto-generated constructor stub
     }
 	@Override
-	public boolean CreateStudent(Student st) {
-		// TODO Auto-generated method stub
-		try{
-			em.persist(st);
-			return true;
-		}catch(Exception ex){
-			return false;
-		}
-	}
-	@Override
 	public boolean EditStudent(Student st) {
 		// TODO Auto-generated method stub
 		try{
