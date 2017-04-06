@@ -1,0 +1,22 @@
+package dataAccess;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+
+/**
+ * Session Bean implementation class StudentDAO
+ */
+@Stateless
+@LocalBean
+public class StudentDAO implements StudentDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+	private EntityManager em;
+    public StudentDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

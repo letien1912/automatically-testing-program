@@ -1,0 +1,12 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.Problem;
+
+@Remote
+public interface AdminDAORemote {
+	 public boolean CreateProblem(Problem problem);
+	 public boolean EditProblem(Problem problem);
+	 public boolean DeleteProblem(Problem problem);
+}

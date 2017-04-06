@@ -1,0 +1,20 @@
+package dataAccess;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class AdminDAO
+ */
+@Stateless
+@LocalBean
+public class AdminDAO implements AdminDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+    public AdminDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

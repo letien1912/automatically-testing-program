@@ -1,0 +1,37 @@
+package dataAccess;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import Entities.Teacher;
+
+/**
+ * Session Bean implementation class TeacherDAO
+ */
+@Stateless
+@LocalBean
+public class TeacherDAO implements TeacherDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+	@PersistenceContext(unitName="Entities")
+	private EntityManager em;
+    public TeacherDAO() {
+        // TODO Auto-generated constructor stub
+    }
+    @Override
+	public boolean EditTeacher(Teacher teacher) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(teacher);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+
+}

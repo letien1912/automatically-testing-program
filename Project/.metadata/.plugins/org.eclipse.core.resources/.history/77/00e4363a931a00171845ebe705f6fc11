@@ -1,0 +1,18 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.Contest;
+import Entities.Problem;
+import Entities.Teacher;
+
+@Remote
+public interface TeacherDAORemote {
+	public boolean EditTeacher(Teacher teacher);
+	public boolean CreateProblem(Problem problem);
+	public boolean EditProblem(Problem problem);
+	public boolean DeleteProblem(Problem problem);
+	public boolean CreateContest(Contest contest);
+	public boolean EditContest(Contest contest);
+	public boolean DeleteContest(Contest contest);
+}

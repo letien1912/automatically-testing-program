@@ -1,0 +1,9 @@
+package dataAccess;
+import javax.ejb.Remote;
+import Entities.Teacher;
+
+@Remote
+public interface AdminDAORemote {
+	public boolean CreateTeacher(Teacher teacher);
+	
+}
