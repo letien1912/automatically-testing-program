@@ -153,12 +153,12 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:/qlda" pool-name="qlda" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:sqlserver://localhost:1433;databaseName=qlda</connection-url>
+                <datasource jndi-name="java:/ATP" pool-name="ATP" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:sqlserver://localhost:1433;databaseName=ATP</connection-url>
                     <driver>sqlserver</driver>
                     <security>
-                        <user-name>lldtien</user-name>
-                        <password>thienthan</password>
+                        <user-name>user</user-name>
+                        <password>password</password>
                     </security>
                 </datasource>
                 <datasource jndi-name="java:jboss/MySqlDS" pool-name="MySqlDS" enabled="true">

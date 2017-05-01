@@ -11,7 +11,14 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+    @NamedQuery(name="Country.findAll",
+                query="SELECT t FROM Teacher t"),
+    @NamedQuery(name="Country.findByName",
+                query="SELECT t FROM Teacher t WHERE t.TeacherName = :name"),
+    @NamedQuery(name="Country.findAllContestCreatedByTeacher",
+    			query="SELECT c FROM Contest c WHERE c.TeacherId = :id"),
+}) 
 public class Teacher implements Serializable {
 
 	   

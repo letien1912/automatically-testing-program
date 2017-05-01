@@ -1,4 +1,50 @@
-"{\"WFLYCTL0180: Services with missing/unavailable dependencies\" => [
-    \"jboss.persistenceunit.\\\"QLSV-EAR.ear#QLSV-JPA\\\" is missing [jboss.naming.context.java.qlsv]\",
-    \"jboss.persistenceunit.\\\"QLSV-EAR.ear#QLSV-JPA\\\".__FIRST_PHASE__ is missing [jboss.naming.context.java.qlsv]\"
-]}"
+"{
+    \"WFLYCTL0180: Services with missing/unavailable dependencies\" => [
+        \"jboss.persistenceunit.\\\"QLSV-EAR.ear#QLSV-JPA\\\" is missing [jboss.naming.context.java.qlsv]\",
+        \"jboss.persistenceunit.\\\"QLSV-EAR.ear#QLSV-JPA\\\".__FIRST_PHASE__ is missing [jboss.naming.context.java.qlsv]\"
+    ],
+    \"WFLYCTL0288: One or more services were unable to start due to one or more indirect dependencies not being available.\" => {
+        \"Services that were unable to start:\" => [
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".CdiValidatorFactoryService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.MonHocDao.JndiBindingsService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.MonHocDao.START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.MonHocDao.WeldInstantiator\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.MonHocDao.WeldInterceptorBindingsService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SVDKMHDao.JndiBindingsService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SVDKMHDao.START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SVDKMHDao.WeldInstantiator\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SVDKMHDao.WeldInterceptorBindingsService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SinhVienDao.JndiBindingsService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SinhVienDao.START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SinhVienDao.WeldInstantiator\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".component.SinhVienDao.WeldInterceptorBindingsService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".deploymentCompleteService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".jndiDependencyService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-EJB.jar\\\".moduleDeploymentRuntimeInformationStart\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".CdiValidatorFactoryService\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"com.sun.faces.config.ConfigureListener\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"javax.faces.webapp.FacetTag\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"webweb.ListMh\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"webweb.ListSV\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"webweb.MonHocsvl\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"webweb.SVDKMHSvl\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".component.\\\"webweb.SinhViensvl\\\".START\",
+            \"jboss.deployment.subunit.\\\"QLSV-EAR.ear\\\".\\\"QLSV-JSP.war\\\".deploymentCompleteService\",
+            \"jboss.deployment.unit.\\\"QLSV-EAR.ear\\\".CdiValidatorFactoryService\",
+            \"jboss.deployment.unit.\\\"QLSV-EAR.ear\\\".WeldStartService\",
+            \"jboss.deployment.unit.\\\"QLSV-EAR.ear\\\".deploymentCompleteService\",
+            \"jboss.naming.context.java.comp.QLSV-EAR.QLSV-EJB.MonHocDao.env.\\\"Dao.MonHocDao\\\".em\",
+            \"jboss.naming.context.java.comp.QLSV-EAR.QLSV-EJB.SVDKMHDao.env.\\\"Dao.SVDKMHDao\\\".em\",
+            \"jboss.naming.context.java.comp.QLSV-EAR.QLSV-EJB.SinhVienDao.env.\\\"Dao.SinhVienDao\\\".em\",
+            \"jboss.undertow.deployment.default-server.default-host./QLSV-JSP\",
+            \"jboss.undertow.deployment.default-server.default-host./QLSV-JSP.UndertowDeploymentInfoService\"
+        ],
+        \"Services that may be the cause:\" => [
+            \"jboss.deployment.subunit.\\\"WebSVClientEAR.ear\\\".\\\"WebSVClient.war\\\".deploymentCompleteService\",
+            \"jboss.naming.context.java.qlda\",
+            \"jboss.naming.context.java.qlsv\"
+        ]
+    }
+}"
