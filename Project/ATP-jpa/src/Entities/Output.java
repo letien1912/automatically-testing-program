@@ -8,7 +8,10 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="Output.GetByOutputID",query="select o from Output o where o.OutputId=:outputID"),
+	@NamedQuery(name="Output.GetByProblemID",query="select o from Output o where o.ProblemId=:problemID")
+})
 public class Output implements Serializable {
 
 	@Id @GeneratedValue
