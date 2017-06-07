@@ -4,8 +4,6 @@
 <fullyQualifiedTypeName name="Entities.Student_ContestDetail"/>
 <fullyQualifiedTypeName name="javax.inject.Named"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
-<fullyQualifiedTypeName name="Entities.Submission"/>
-<fullyQualifiedTypeName name="Entities.SubmissionResult"/>
 <fullyQualifiedTypeName name="Entities.AcceptOutput"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
@@ -24,4 +22,8 @@
 <fullyQualifiedTypeName name="Entities.Contest"/>
 <fullyQualifiedTypeName name="Entities.Input"/>
 <fullyQualifiedTypeName name="Entities.Output"/>
+<fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="Entities.Submission"/>
+<fullyQualifiedTypeName name="Entities.SubmissionResult"/>
 </qualifiedTypeNameHistroy>
