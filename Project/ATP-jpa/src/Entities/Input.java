@@ -17,7 +17,7 @@ public class Input implements Serializable {
 	private int InputId;
 	@Column(name="ProblemId")
 	private String ProblemId;
-	private String InputTest;
+	private String InputData;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -29,7 +29,7 @@ public class Input implements Serializable {
 		super();
 		InputId = inputId;
 		ProblemId = problemId;
-		InputTest = inputTest;
+		InputData = inputTest;
 	}
 	public Input() {
 		super();
@@ -49,11 +49,11 @@ public class Input implements Serializable {
 		this.ProblemId = ProblemId;
 	}   
 	public String getInputTest() {
-		return this.InputTest;
+		return this.InputData;
 	}
 
 	public void setInputTest(String InputTest) {
-		this.InputTest = InputTest;
+		this.InputData = InputTest;
 	}
    
 }
