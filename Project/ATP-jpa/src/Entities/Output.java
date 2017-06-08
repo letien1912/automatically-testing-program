@@ -18,7 +18,7 @@ public class Output implements Serializable {
 	private int OutputId;
 	@Column(name="ProblemId")
 	private String ProblemId;
-	private String OutputTest;
+	private String OutputData;
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -34,7 +34,7 @@ public class Output implements Serializable {
 		super();
 		OutputId = outputId;
 		ProblemId = problemId;
-		OutputTest = outputTest;
+		OutputData = outputTest;
 	}
 
 	public int getOutputId() {
@@ -54,11 +54,11 @@ public class Output implements Serializable {
 	}
 
 	public String getOutputTest() {
-		return OutputTest;
+		return OutputData;
 	}
 
 	public void setOutputTest(String outputTest) {
-		OutputTest = outputTest;
+		OutputData = outputTest;
 	}
 	
    

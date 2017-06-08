@@ -19,6 +19,7 @@ public class NotAcceptOutput implements Serializable {
 	private int InputIndex;
 	private String StudentOutput;
 	private String TeacherOutput;
+	private String ErrorMessage;
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
@@ -56,5 +57,12 @@ public class NotAcceptOutput implements Serializable {
 	public void setTeacherOutput(String TeacherOutput) {
 		this.TeacherOutput = TeacherOutput;
 	}
+	public String getErrorMessage() {
+		return ErrorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		ErrorMessage = errorMessage;
+	}
+	
    
 }

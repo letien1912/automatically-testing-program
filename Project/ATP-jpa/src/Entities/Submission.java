@@ -26,6 +26,7 @@ public class Submission implements Serializable {
 	private int ContestSubmitTime;
 	private int ProblemSubmitTime;
 	private String Status;
+	private String SourceCode;
 	private static final long serialVersionUID = 1L;
 	@OneToOne
 	private SubmissionResult SubmissionResult;

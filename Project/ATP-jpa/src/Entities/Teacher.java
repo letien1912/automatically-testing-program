@@ -12,26 +12,29 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-    @NamedQuery(name="Country.findAll",
+    @NamedQuery(name="Teacher.findAll",
                 query="SELECT t FROM Teacher t"),
-    @NamedQuery(name="Country.findByName",
+    @NamedQuery(name="Teacher.findByName",
                 query="SELECT t FROM Teacher t WHERE t.TeacherName = :name"),
-    @NamedQuery(name="Country.findAllContestCreatedByTeacher",
+    @NamedQuery(name="Teacher.findAllContestCreatedByTeacher",
     			query="SELECT c FROM Contest c WHERE c.TeacherId = :id"),
 }) 
 public class Teacher implements Serializable {
 
-	   
-	@Id @GeneratedValue
-	private int TeacherId;
+	private static final long serialVersionUID = 1L;
+	@Id
+	private String TeacherId;
 	@Column(name = "TeacherName",nullable=false)
 	private String TeacherName;
-	private static final long serialVersionUID = 1L;
+	@Column(nullable = false)
+	private String UserName;
+	@Column(nullable = false)
+	private String Password;
 	
 	@OneToMany(mappedBy="Teacher")
 	private List<Contest> contests;
 	
-	public Teacher(int teacherId, String teacherName) {
+	public Teacher(String teacherId, String teacherName) {
 		super();
 		TeacherId = teacherId;
 		TeacherName = teacherName;
@@ -39,11 +42,11 @@ public class Teacher implements Serializable {
 	public Teacher() {
 		super();
 	}   
-	public int getTeacherId() {
+	public String getTeacherId() {
 		return this.TeacherId;
 	}
 
-	public void setTeacherId(int TeacherId) {
+	public void setTeacherId(String TeacherId) {
 		this.TeacherId = TeacherId;
 	}   
 	public String getTeacherName() {
@@ -53,5 +56,18 @@ public class Teacher implements Serializable {
 	public void setTeacherName(String TeacherName) {
 		this.TeacherName = TeacherName;
 	}
+	public String getUserName() {
+		return UserName;
+	}
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
+	public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String password) {
+		Password = password;
+	}
+	
    
 }

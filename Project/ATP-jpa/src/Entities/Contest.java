@@ -33,7 +33,7 @@ public class Contest implements Serializable {
 	private Teacher Teacher;
 	
 	@OneToMany(mappedBy="Contest")
-	private List<Student_ContestDetail> contestDetails;
+	private List<Student_ContestDetail> ContestDetails;
 	
 	@OneToMany(mappedBy="Contest")
 	private List<Problem> Problems;
