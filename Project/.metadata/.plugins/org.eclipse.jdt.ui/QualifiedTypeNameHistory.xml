@@ -25,5 +25,11 @@
 <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="Entities.Submission"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream.PutField"/>
+<fullyQualifiedTypeName name="CodeHandler.ProblemCompiling"/>
 <fullyQualifiedTypeName name="Entities.SubmissionResult"/>
+<fullyQualifiedTypeName name="Utilities.CodeFileWritting"/>
+<fullyQualifiedTypeName name="java.lang.Process"/>
+<fullyQualifiedTypeName name="java.lang.ProcessBuilder"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,24 @@
+package CodeHandling;
+
+import java.util.List;
+
+import Entities.Input;
+import Entities.Output;
+import Entities.Submission;
+
+public class ProblemComparator {
+	private String compiledURL = "";
+	private Submission submission;
+	private List<Input> inputs;
+	private List<Output> outputs;
+	
+	public ProblemComparator(String compiledURL, Submission submission) {
+		super();
+		this.compiledURL = compiledURL;
+		this.submission = submission;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,9 @@
+package Calculating;
+
+import Entities.Submission;
+import Entities.SubmissionResult;
+
+public class CompilingProblem {
+	private Submission submission;
+	private SubmissionResult submissionResult;
+}

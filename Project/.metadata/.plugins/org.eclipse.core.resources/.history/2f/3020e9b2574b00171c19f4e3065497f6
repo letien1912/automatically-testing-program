@@ -1,0 +1,28 @@
+package Utilities;
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+public class CodeFileWritting {
+	private static final String CODE_URL = "CodeFolder";
+	private static final String CODE_SUFFIX = ".cpp";
+	
+	public static String writeFile(String content, String name){
+		String url = CODE_URL + "" + name + CODE_SUFFIX;
+		writeCodeToUrl(content, url);
+		return url;
+	}
+
+	private static void writeCodeToUrl(String content, String url) {
+		PrintWriter out;
+		try {
+			out = new PrintWriter(url);
+			out.print(content);
+			out.flush();
+			out.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

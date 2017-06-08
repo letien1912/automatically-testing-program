@@ -1,0 +1,22 @@
+package CodeHandler;
+
+import Entities.Submission;
+import Entities.SubmissionResult;
+import Utilities.CodeFileWritting;
+
+public class ProblemCompiling {
+	private Submission submission;
+	private String fileContainer;
+	
+	public ProblemCompiling(Submission submission) {
+		super();
+		this.submission = submission;
+	}
+	
+	private String combile(){
+		fileContainer = CodeFileWritting.writeFile(submission.getStatus(), submission.getProblemId() + "");
+		
+	}
+	
+	
+}

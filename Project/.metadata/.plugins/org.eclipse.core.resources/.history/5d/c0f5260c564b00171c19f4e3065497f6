@@ -1,0 +1,16 @@
+package CodeHandler;
+
+import Entities.Submission;
+
+public class ProblemCompiling {
+	private Submission submission;
+	private fileContainer;
+	
+	public ProblemCompiling(Submission submission) {
+		super();
+		this.submission = submission;
+	}
+	
+	
+	
+}

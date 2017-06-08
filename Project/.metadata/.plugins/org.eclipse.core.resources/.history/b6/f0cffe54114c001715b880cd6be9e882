@@ -1,0 +1,31 @@
+package ErrorHandler;
+
+public class ProblemHandlingException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private ErrorCode errorCode = ErrorCode.OK;
+
+	public ProblemHandlingException() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ProblemHandlingException(String message) {
+		super(message);
+	}
+	
+
+	public ProblemHandlingException(ErrorCode errorCode) {
+		super();
+		this.errorCode = errorCode;
+	}
+
+
+
+	public enum ErrorCode {
+		OK, FILE_NOT_FOUND, COMPILE_CODE_FIRST,
+	}
+}

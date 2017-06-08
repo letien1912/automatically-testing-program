@@ -1,0 +1,9 @@
+package CodeHandling;
+
+import Entities.Submission;
+
+public class ProblemComparator {
+	private String compiledURL = "";
+	private Submission submission;
+	
+}

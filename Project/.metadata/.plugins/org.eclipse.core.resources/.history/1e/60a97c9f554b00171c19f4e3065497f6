@@ -1,0 +1,10 @@
+package Utilities;
+
+public class CodeFileWritting {
+	private static final String CODE_URL = "CodeFolder";
+	private static final String CODE_URL = "CodeFolder";
+	
+	public static String writeFile(String content, String name){
+		String url = CODE_URL + "" + name ;
+	}
+}

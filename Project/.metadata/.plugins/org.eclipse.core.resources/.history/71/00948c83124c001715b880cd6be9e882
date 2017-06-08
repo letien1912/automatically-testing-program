@@ -1,0 +1,31 @@
+package CodeHandler;
+
+import java.io.IOException;
+
+import Entities.Submission;
+import ErrorHandler.ProblemHandlingException;
+import Utilities.CodeFileWritting;
+
+public class ProblemCompiling {
+	private Submission submission;
+	private String fileContainer;
+	private boolean isCombiled;
+	
+	public ProblemCompiling(Submission submission) {
+		super();
+		this.submission = submission;
+	}
+	
+	private String compile() throws ProblemHandlingException{
+		String problemName = submission.getContestId();
+		fileContainer = CodeFileWritting.writeFile(submission.getStatus(), problemName);
+		try {
+			Process process = new ProcessBuilder("g++", fileContainer, "-o", problemName).start();
+		} catch (IOException e) {
+			throw new ProblemHandlingException(e.getMessage());
+		}
+		
+	}
+	
+	
+}

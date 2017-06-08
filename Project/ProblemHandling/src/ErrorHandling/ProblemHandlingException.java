@@ -1,0 +1,55 @@
+package ErrorHandling;
+
+public class ProblemHandlingException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private ErrorCode errorCode = ErrorCode.OK;
+	private String errorParam;
+
+	public ProblemHandlingException() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ProblemHandlingException(String message) {
+		super(message);
+	}
+
+	public ProblemHandlingException(ErrorCode errorCode) {
+		super();
+		this.errorCode = errorCode;
+	}
+
+	public ProblemHandlingException(ErrorCode errorCode, String errorParam) {
+		super();
+		this.errorCode = errorCode;
+		this.errorParam = errorParam;
+	}
+
+	public String ErrorMessange() throws Exception {
+		switch (errorCode) {
+		case OK:
+			throw new Exception("Should not go here");
+		case FILE_NOT_FOUND:
+			return String.format("Cant not found file -%c .", errorParam);
+		case COMPILE_CODE_FIRST:
+			return String.format("Need combile code before get result");
+		case COMPILER_ERROR:
+			return String.format("Compiler error -%c", errorParam);
+		case NO_DATA:
+			return String.format("-%c has no data from SQL", errorParam);
+		case INPUT_OUTPUT_DIFFERENT:
+			return String.format("the size of input and output is not same");
+		default:
+			break;
+		}
+		return null;
+	}
+
+	public enum ErrorCode {
+		OK, FILE_NOT_FOUND, COMPILE_CODE_FIRST, COMPILER_ERROR, NO_DATA, INPUT_OUTPUT_DIFFERENT
+	}
+}

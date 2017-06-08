@@ -1,0 +1,65 @@
+package CodeHandling;
+
+import java.util.List;
+
+import Entities.Input;
+import Entities.Output;
+import Entities.Submission;
+import ErrorHandling.ProblemHandlingException;
+import ErrorHandling.ProblemHandlingException.ErrorCode;
+
+public class ProblemComparator {
+
+	private static int NUMBER_OF_THREAD_DEFAULT = 20;
+
+	private String compiledURL = "";
+	private Submission submission;
+	private List<Input> inputs;
+	private List<Output> outputs;
+
+	public ProblemComparator(String compiledURL, Submission submission) throws ProblemHandlingException {
+		super();
+		this.compiledURL = compiledURL;
+		this.submission = submission;
+		init();
+	}
+
+	private void init() throws ProblemHandlingException {
+		inputs = getAllInput(submission.getProblemId());
+		outputs = getAllOutput(submission.getProblemId());
+		if (isInputEmpty())
+			throw new ProblemHandlingException(ErrorCode.NO_DATA, "inputs");
+		if (isOutputEmpty())
+			throw new ProblemHandlingException(ErrorCode.NO_DATA, "outputs");
+	}
+
+	private List<Input> getAllInput(String problemId) {
+		return null;
+	}
+
+	private List<Output> getAllOutput(String problemId) {
+		return null;
+	}
+
+	private boolean isInputEmpty() {
+		return inputs.size() == 0;
+	}
+
+	private boolean isOutputEmpty() {
+		return outputs.size() == 0;
+	}
+
+	private void compare() throws ProblemHandlingException {
+		if (!areInputAndOutputSameSize())
+			throw new ProblemHandlingException(ErrorCode.INPUT_OUTPUT_DIFFERENT);
+		int numberTestcase = inputs.size();
+		for (int i = 0; i < numberTestcase; ++i) {
+
+		}
+	}
+
+	private boolean areInputAndOutputSameSize() {
+		return inputs.size() == outputs.size();
+	}
+
+}

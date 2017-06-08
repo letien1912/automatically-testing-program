@@ -1,0 +1,49 @@
+package ErrorHandler;
+
+public class ProblemHandlingException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private ErrorCode errorCode = ErrorCode.OK;
+	private String errorParam;
+	public ProblemHandlingException() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ProblemHandlingException(String message) {
+		super(message);
+	}
+	
+	public ProblemHandlingException(ErrorCode errorCode) {
+		super();
+		this.errorCode = errorCode;
+	}
+	
+	public ProblemHandlingException(ErrorCode errorCode, String errorParam) {
+		super();
+		this.errorCode = errorCode;
+		this.errorParam = errorParam;
+	}
+
+	public String ErrorMessange() throws Exception {
+		switch (errorCode) {
+		case OK:
+			throw new Exception("Should not go here");
+			break;
+		case FILE_NOT_FOUND:
+			throw new Exception("Should not go here");
+			break;
+		default:
+			break;
+		}
+		return null;
+	}
+
+
+	public enum ErrorCode {
+		OK, FILE_NOT_FOUND, COMPILE_CODE_FIRST,
+	}
+}

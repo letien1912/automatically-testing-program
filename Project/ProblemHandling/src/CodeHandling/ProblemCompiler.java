@@ -1,0 +1,66 @@
+package CodeHandling;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import Entities.Submission;
+import ErrorHandling.ProblemHandlingException;
+import ErrorHandling.ProblemHandlingException.ErrorCode;
+import Utilities.URLHandler;
+
+public class ProblemCompiler {
+	private Submission submission;
+	private String fileContainer;
+	private boolean isCompiled = false;
+	private boolean isCompileSusscess;
+	
+	public ProblemCompiler(Submission submission) {
+		super();
+		this.submission = submission;
+	}
+
+	private void compile() throws ProblemHandlingException {
+		String problemName = submission.getContestId();
+		fileContainer = URLHandler.writeFile(submission.getStatus(), problemName);
+		try {
+			Process process = new ProcessBuilder("g++", fileContainer, "-o", problemName).start();
+			BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+			
+			String errorContain = getErrorCompile(stdError);
+			if(isErrorContainEmpty(errorContain))
+				isCompileSusscess = true;
+			else 
+				isCompileSusscess = false;
+
+		} catch (IOException e) {
+			throw new ProblemHandlingException(ErrorCode.COMPILER_ERROR, e.getMessage());
+		}
+		isCompiled = true;
+	}
+	
+	private boolean isErrorContainEmpty(String errorContain) {
+		return errorContain.equals("");
+	}
+
+	private String getErrorCompile(BufferedReader stdError) throws IOException {
+		String error = null;
+		String errorCompile = "";
+		while ((error = stdError.readLine()) != null) {
+			errorCompile += error + "\n";
+		}
+		stdError.close();
+		return errorCompile;
+	}
+	
+	public String getCompiledURL() throws ProblemHandlingException {
+		if (isCompiled)
+			return URLHandler.getCompiledURL(submission.getSubmissionId());
+		throw new ProblemHandlingException(ErrorCode.COMPILE_CODE_FIRST);
+	}
+
+	public boolean isCompileSusscess() {
+		return isCompileSusscess;
+	}
+
+}

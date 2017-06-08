@@ -1,0 +1,5 @@
+package Utilities;
+
+public class CodeFileWritting {
+	private static final String CODE_URL = "CodeFolder";
+}
