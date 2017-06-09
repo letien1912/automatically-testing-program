@@ -1,0 +1,55 @@
+package UnitTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import CodeHandling.ProblemCompiler;
+import Entities.Submission;
+import ErrorHandling.ProblemHandlingException;
+
+public class ProblemCompilerTest {
+
+	
+	@Test
+	public void testGetCompiledURL() {
+		Submission sub = new Submission();
+		sub. setSubmissionId("1");
+		sub.setSourceCode("#include <iostream> #include <algorithm> using namespace std;int a[3];int main() { cin >> a[0] >> a[1] >> a[2];sort(a, a + 3);cout<<(a[1]-a[0])+(a[2]-a[1])];}");
+		ProblemCompiler compiler = new ProblemCompiler(sub);
+		try {
+			compiler.compile();
+		} catch (ProblemHandlingException e) {
+			e.printStackTrace();
+		}
+		String expect = "CodeFolder/1.exe";
+		try {
+			assertEquals(compiler.getCompiledURL(), expect);
+		} catch (ProblemHandlingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testCompiledError() {
+		Submission sub = new Submission();
+		sub. setSubmissionId("2");
+		sub.setSourceCode("#include <iostream> #include <algorithm> using namespace std;int a[3];int main() { cin >> a[0] >> a[1] >> a[2];sort(a, a + 3);cout<<(a[1]-a[0])+(a[2]-a[1])];}");
+		ProblemCompiler compiler = new ProblemCompiler(sub);
+		try {
+			compiler.compile();
+		} catch (ProblemHandlingException e) {
+			e.printStackTrace();
+		}
+		String expect = "CodeFolder/1.exe";
+		try {
+			assertEquals(compiler.getCompiledURL(), expect);
+		} catch (ProblemHandlingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+}

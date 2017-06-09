@@ -1,0 +1,19 @@
+1496821742869	Rename method 'writeCodeToFile'
+1496838254280	Rename method 'combile'
+1496901533049	Rename package 'ProblemHandlingException'
+1496903338323	Rename field 'isCombiled'
+1496903346360	Rename method 'isCombiled'
+1496903973673	Rename type 'CodeFileWritting'
+1496904005045	Rename package 'ErrorHandler'
+1496904014062	Rename package 'CodeHandler'
+1496904025305	Rename type 'ProblemCompiling'
+1496907434631	Rename enum constant 'INPUT_OUTPUT_DIFFRENT'
+1496910554788	Delete element
+1496911077720	Rename method 'GetAnswerTest'
+1496911081375	Rename method 'getActualResutl'
+1496989478859	Rename method 'stopProcess'
+1496989555279	Rename local variable 'output'
+1496990938527	Delete element
+1496992912327	Delete element
+1496994332874	Rename field 'errorContain'
+1496994348997	Rename method 'getErrorContain'

@@ -1,0 +1,5 @@
+package ErrorHandler;
+
+public class ProblemHandlingException extends Exception {
+
+}

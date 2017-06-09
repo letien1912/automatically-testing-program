@@ -1,0 +1,16 @@
+package UnitTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Utilities.URLHandler;
+
+public class URLHandlerTest {
+
+	@Test
+	public void testWriteFile() {
+		URLHandler.writeFile("abc", "xxx");
+	}
+
+}

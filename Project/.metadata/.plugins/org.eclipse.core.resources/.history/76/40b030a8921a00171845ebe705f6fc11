@@ -1,8 +1,0 @@
-package dataAccess;
-
-import javax.ejb.Remote;
-
-@Remote
-public interface TeacherDAORemote {
-	
-}
