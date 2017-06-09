@@ -11,7 +11,9 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="SubmissionResult.GetByID",query="Select s from SubmissionResult s where s.SubmissionId=:id")
+})
 public class SubmissionResult implements Serializable {
 
 	@Id

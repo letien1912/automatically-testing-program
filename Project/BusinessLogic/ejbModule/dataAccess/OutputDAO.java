@@ -65,19 +65,31 @@ public class OutputDAO implements I_OutputDAORemote {
 	}
 
 	@Override
-	public Output GetOutput(int outputID) {
+	public Output GetOutput(int outputID) throws ExceptionHandeler{
 		// TODO Auto-generated method stub
-		return em.createNamedQuery("Output.GetByOutputID",Output.class)
-				.setParameter("outputID", outputID)
-				.getSingleResult();
+		try {
+			return em.createNamedQuery("Output.GetByOutputID",Output.class)
+					.setParameter("outputID", outputID)
+					.getSingleResult();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ExceptionHandeler(e.getMessage(), 71, "OutputDAO", "Get Output By ID Fail!");
+		}
+	
 	}
 
 	@Override
-	public List<Output> GetOutputByProblemID(String problemID) {
+	public List<Output> GetOutputByProblemID(String problemID) throws ExceptionHandeler{
 		// TODO Auto-generated method stub
-		return em.createNamedQuery("Output.GetByProblemID",Output.class)
-				.setParameter("problemID", problemID)
-				.getResultList();
+		try {
+			return em.createNamedQuery("Output.GetByProblemID",Output.class)
+					.setParameter("problemID", problemID)
+					.getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ExceptionHandeler(e.getMessage(), 85, "OutputDAO", "Get Output By ID Fail!");
+		}
+	
 	}
 
 }

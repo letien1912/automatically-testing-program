@@ -11,6 +11,10 @@ import javax.ejb.Stateless;
 public class ExceptionHandeler extends Exception{
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5255193906000616302L;
+	/**
      * Default constructor. 
      */
 	private String systemErrorMessage;

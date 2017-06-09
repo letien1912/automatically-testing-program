@@ -109,5 +109,12 @@ public class Submission implements Serializable {
 	public void setStatus(String Status) {
 		this.Status = Status;
 	}
+	public String getSourceCode() {
+		return SourceCode;
+	}
+	public void setSourceCode(String sourceCode) {
+		SourceCode = sourceCode;
+	}
+	
    
 }

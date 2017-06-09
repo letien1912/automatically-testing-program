@@ -9,7 +9,11 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="Input.GetByID", query="Select i from Input i where i.InputId=:id"),
+	@NamedQuery(name="Input.GetByProblemID", query="Select i from Input i where i.ProblemId=:problemId")
+	
+})
 public class Input implements Serializable {
 
 	   
