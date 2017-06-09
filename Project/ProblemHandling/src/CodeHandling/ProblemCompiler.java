@@ -12,23 +12,23 @@ import Utilities.URLHandler;
 public class ProblemCompiler {
 	private Submission submission;
 	private String fileContainer;
-	private boolean isCompiled = false;
 	private boolean isCompileSusscess;
+	private String errorCompileContain;
 	
 	public ProblemCompiler(Submission submission) {
 		super();
 		this.submission = submission;
 	}
 
-	private void compile() throws ProblemHandlingException {
-		String problemName = submission.getContestId();
-		fileContainer = URLHandler.writeFile(submission.getStatus(), problemName);
+	public void compile() throws ProblemHandlingException {
+		String problemName = submission.getSubmissionId();
+		fileContainer = URLHandler.writeFile(submission.getSourceCode(), problemName);
 		try {
 			Process process = new ProcessBuilder("g++", fileContainer, "-o", problemName).start();
 			BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
 			
-			String errorContain = getErrorCompile(stdError);
-			if(isErrorContainEmpty(errorContain))
+			errorCompileContain = getErrorCompile(stdError);
+			if(isErrorContainEmpty(errorCompileContain))
 				isCompileSusscess = true;
 			else 
 				isCompileSusscess = false;
@@ -36,7 +36,6 @@ public class ProblemCompiler {
 		} catch (IOException e) {
 			throw new ProblemHandlingException(ErrorCode.COMPILER_ERROR, e.getMessage());
 		}
-		isCompiled = true;
 	}
 	
 	private boolean isErrorContainEmpty(String errorContain) {
@@ -54,13 +53,20 @@ public class ProblemCompiler {
 	}
 	
 	public String getCompiledURL() throws ProblemHandlingException {
-		if (isCompiled)
+		if (isCompileSusscess)
 			return URLHandler.getCompiledURL(submission.getSubmissionId());
-		throw new ProblemHandlingException(ErrorCode.COMPILE_CODE_FIRST);
+		throw new ProblemHandlingException(ErrorCode.COMPILE_UNSUCCESS, getErrorCompileContain());
 	}
 
 	public boolean isCompileSusscess() {
 		return isCompileSusscess;
+	}
+	
+	public String getErrorCompileContain() {
+		if (!isCompileSusscess) {
+			return errorCompileContain;
+		}
+		return "";
 	}
 
 }

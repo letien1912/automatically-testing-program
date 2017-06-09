@@ -3,12 +3,15 @@ package Utilities;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+import ErrorHandling.ProblemHandlingException;
+import ErrorHandling.ProblemHandlingException.ErrorCode;
+
 public class URLHandler {
-	private static final String CODE_URL = "CodeFolder";
+	private static final String CODE_URL = "CodeFolder"; 
 	private static final String CODE_SUFFIX = ".cpp";
 	public static final String CODE_SUFFIX_COMPILED = ".exe";
 	
-	public static String writeFile(String content, String name){
+	public static String writeFile(String content, String name) throws ProblemHandlingException{
 		String url = CODE_URL  + "/" + name + CODE_SUFFIX;
 		writeCodeToUrl(content, url);
 		return url;
@@ -18,7 +21,7 @@ public class URLHandler {
 		return CODE_URL + "/" + name + CODE_SUFFIX_COMPILED;
 	}
 
-	private static void writeCodeToUrl(String content, String url) {
+	private static void writeCodeToUrl(String content, String url) throws ProblemHandlingException {
 		PrintWriter out;
 		try {
 			out = new PrintWriter(url);
@@ -27,7 +30,7 @@ public class URLHandler {
 			out.close();
 		} catch (FileNotFoundException e) {
 			// need handler
-			e.printStackTrace();
+			throw new ProblemHandlingException(ErrorCode.FILE_NOT_FOUND, e.getMessage());
 		}
 		
 	}

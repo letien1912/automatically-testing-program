@@ -1,0 +1,14 @@
+package UnitTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class URLHandlerTest {
+
+	@Test
+	public void testWriteFile() {
+		fail("Not yet implemented");
+	}
+
+}

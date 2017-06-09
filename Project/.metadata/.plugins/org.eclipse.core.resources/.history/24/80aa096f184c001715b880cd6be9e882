@@ -1,5 +1,0 @@
-package CodeHandling;
-
-public class ProblemComparator {
-	private String compiledURL = "";
-}

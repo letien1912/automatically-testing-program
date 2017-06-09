@@ -1,9 +1,0 @@
-package CodeHandler;
-
-import Entities.Submission;
-
-public class ProblemCompiling {
-	private Submission submission;
-	
-	
-}

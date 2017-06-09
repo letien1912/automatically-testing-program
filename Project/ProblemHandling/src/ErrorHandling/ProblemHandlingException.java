@@ -35,8 +35,8 @@ public class ProblemHandlingException extends Exception {
 			throw new Exception("Should not go here");
 		case FILE_NOT_FOUND:
 			return String.format("Cant not found file -%c .", errorParam);
-		case COMPILE_CODE_FIRST:
-			return String.format("Need combile code before get result");
+		case COMPILE_UNSUCCESS:
+			return String.format("Compile is unsuccess -%c", errorParam);
 		case COMPILER_ERROR:
 			return String.format("Compiler error -%c", errorParam);
 		case NO_DATA:
@@ -48,8 +48,16 @@ public class ProblemHandlingException extends Exception {
 		}
 		return null;
 	}
+	
+	public String getErrorParam() {
+		return errorParam;
+	}
+	
+	public ErrorCode getErrorCode() {
+		return errorCode;
+	}
 
 	public enum ErrorCode {
-		OK, FILE_NOT_FOUND, COMPILE_CODE_FIRST, COMPILER_ERROR, NO_DATA, INPUT_OUTPUT_DIFFERENT
+		OK, FILE_NOT_FOUND, COMPILE_UNSUCCESS, COMPILER_ERROR, NO_DATA, INPUT_OUTPUT_DIFFERENT
 	}
 }

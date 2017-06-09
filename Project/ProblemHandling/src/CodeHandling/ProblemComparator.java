@@ -25,7 +25,7 @@ public class ProblemComparator {
 
 	private Submission submission;
 	private Problem problem;
-	
+
 	private List<Input> inputs;
 	private List<Output> outputs;
 	private Process process;
@@ -70,7 +70,7 @@ public class ProblemComparator {
 		return outputs.size() == 0;
 	}
 
-	private void compare() throws ProblemHandlingException {
+	public void compare() throws ProblemHandlingException {
 		if (!areInputAndOutputSameSize())
 			throw new ProblemHandlingException(ErrorCode.INPUT_OUTPUT_DIFFERENT);
 		int numberTestcase = inputs.size();
@@ -88,13 +88,14 @@ public class ProblemComparator {
 	private boolean acceptPerTest(int pos) {
 		Output output = outputs.get(pos);
 		String actualOutput = getActualOutput();
-		return false;
+		return output.getOutputTest().equals(actualOutput);
 	}
 
 	private String getActualOutput() {
 		Future<String> futureActualOutput = executor.submit(new ActualOutputTask(process));
+		String actualOutput = "";
 		try {
-			String output = futureActualOutput.get((long)problem.getTimeLimit(), TimeUnit.MILLISECONDS);
+			actualOutput = futureActualOutput.get((long) problem.getTimeLimit(), TimeUnit.MILLISECONDS);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,11 +103,28 @@ public class ProblemComparator {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (TimeoutException e) {
-			// TODO Auto-generated catch block
+			/*Time limit*/
+			stopFindActualOutput(futureActualOutput);
 			e.printStackTrace();
 		}
-		return null;
+		stopThreadpool();
+		if(isActualOutputEmpty(actualOutput))
+			/*Lam gi do*/;
+		return actualOutput;
 	}
+
+	private boolean isActualOutputEmpty(String output) {
+		return output.equals("");
+	}
+
+	private void stopFindActualOutput(Future<String> futureActualOutput) {
+		futureActualOutput.cancel(true);
+	}
+	
+	private void stopThreadpool() {
+		executor.shutdown();
+	}
+	
 
 	/*-----------CLASS--------*/
 	class ActualOutputTask implements Callable<String> {
