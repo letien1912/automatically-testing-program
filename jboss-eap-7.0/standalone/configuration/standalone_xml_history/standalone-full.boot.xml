@@ -51,16 +51,9 @@
                     <local default-user="$local" allowed-users="*" skip-group-loading="true"/>
                     <properties path="application-users.properties" relative-to="jboss.server.config.dir"/>
                 </authentication>
-                <authorization map-groups-to-roles="true">
+                <authorization>
                     <properties path="application-roles.properties" relative-to="jboss.server.config.dir"/>
                 </authorization>
-            </security-realm>
-            <security-realm name="SslRealm">
-                <server-identities>
-                    <ssl>
-                        <keystore path="myssl.keystore" relative-to="jboss.server.config.dir" keystore-password="changeit" alias="myssl"/>
-                    </ssl>
-                </server-identities>
             </security-realm>
         </security-realms>
         <audit-log>
@@ -153,19 +146,12 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:/ATP" pool-name="ATP" enabled="true" use-java-context="true">
+                <datasource jndi-name="java:jboss/ATP" pool-name="ATP" enabled="true" use-java-context="true">
                     <connection-url>jdbc:sqlserver://localhost:1433;databaseName=ATP</connection-url>
                     <driver>sqlserver</driver>
                     <security>
                         <user-name>user</user-name>
                         <password>password</password>
-                    </security>
-                </datasource>
-                <datasource jndi-name="java:jboss/MySqlDS" pool-name="MySqlDS" enabled="true">
-                    <connection-url>jdbc:mysql://localhost:3306/cdcols</connection-url>
-                    <driver>mysql</driver>
-                    <security>
-                        <user-name>root</user-name>
                     </security>
                 </datasource>
                 <drivers>
@@ -174,9 +160,6 @@
                     </driver>
                     <driver name="sqlserver" module="com.microsoft">
                         <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
-                    </driver>
-                    <driver name="mysql" module="com.mysql">
-                        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
                     </driver>
                 </drivers>
             </datasources>
@@ -417,7 +400,6 @@
             <buffer-cache name="default"/>
             <server name="default-server">
                 <http-listener name="default" socket-binding="http" redirect-socket="https"/>
-                <https-listener name="default-ssl" security-realm="SslRealm" socket-binding="https"/>
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
                     <filter-ref name="server-header"/>
@@ -475,5 +457,4 @@
             <remote-destination host="localhost" port="25"/>
         </outbound-socket-binding>
     </socket-binding-group>
-
 </server>

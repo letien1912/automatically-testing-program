@@ -1,2 +1,0 @@
-{"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"WebSVClient.war\".INSTALL" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"WebSVClient.war\".INSTALL: WFLYSRV0153: Failed to process phase INSTALL of deployment \"WebSVClient.war\"
-    Caused by: org.jboss.msc.service.DuplicateServiceException: Service jboss.undertow.deployment.default-server.default-host./WebSVClient.session is already registered"}}

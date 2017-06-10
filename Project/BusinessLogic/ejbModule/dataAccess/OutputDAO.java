@@ -65,11 +65,12 @@ public class OutputDAO implements I_OutputDAORemote {
 	}
 
 	@Override
-	public Output GetOutput(int outputID) throws ExceptionHandeler{
+	public Output GetOutput(int outputID, String problemID) throws ExceptionHandeler{
 		// TODO Auto-generated method stub
 		try {
 			return em.createNamedQuery("Output.GetByOutputID",Output.class)
 					.setParameter("outputID", outputID)
+					.setParameter("problemID", problemID)
 					.getSingleResult();
 		} catch (Exception e) {
 			// TODO: handle exception

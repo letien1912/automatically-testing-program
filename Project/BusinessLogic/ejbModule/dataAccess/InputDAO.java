@@ -68,10 +68,11 @@ public class InputDAO implements I_InputDAORemote {
 	}
 
 	@Override
-	public Input GetInput(int inputID) throws ExceptionHandeler {
+	public Input GetInput(int inputID, String problemID) throws ExceptionHandeler {
 		// TODO Auto-generated method stub
 		return em.createNamedQuery("Input.GetByID",Input.class)
-				.setParameter("id", inputID)
+				.setParameter("inputID", inputID)
+				.setParameter("problemId", problemID)
 				.getSingleResult();
 	}
 

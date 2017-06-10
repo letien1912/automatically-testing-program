@@ -10,31 +10,25 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name="Input.GetByID", query="Select i from Input i where i.InputId=:id"),
+	@NamedQuery(name="Input.GetByInput_ProblemID", query="Select i from Input i where i.InputId=:inputID "
+			+ "and i.ProblemId=:problemID"),
 	@NamedQuery(name="Input.GetByProblemID", query="Select i from Input i where i.ProblemId=:problemId")
 	
 })
+@IdClass(InputPK.class)
 public class Input implements Serializable {
 
 	   
 	@Id @GeneratedValue
-	private int InputId;
-	@Column(name="ProblemId")
+	private int InputId;   
+	@Id @Column(name="ProblemId")
 	private String ProblemId;
 	private String InputData;
-	
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToOne
 	@JoinColumn(name="ProblemId", insertable = false, updatable = false)
 	private Problem Problem;
-	
-	public Input(int inputId, String problemId, String inputTest) {
-		super();
-		InputId = inputId;
-		ProblemId = problemId;
-		InputData = inputTest;
-	}
 	public Input() {
 		super();
 	}   
@@ -52,12 +46,12 @@ public class Input implements Serializable {
 	public void setProblemId(String ProblemId) {
 		this.ProblemId = ProblemId;
 	}   
-	public String getInputTest() {
+	public String getInputData() {
 		return this.InputData;
 	}
 
-	public void setInputTest(String InputTest) {
-		this.InputData = InputTest;
+	public void setInputData(String InputData) {
+		this.InputData = InputData;
 	}
    
 }

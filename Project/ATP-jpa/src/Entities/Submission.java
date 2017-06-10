@@ -9,7 +9,17 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="Submission.GetAll",query="Select s from Submission s"),
+	@NamedQuery(name="Submission.GetByID",query="Select s from Submission s where s.SubmissionId=:id"),
+	@NamedQuery(name="Submission.GetByProblemID",query="Select s from Submission s where s.ProblemId=:problemID"),
+	@NamedQuery(name="Submission.GetByStudent_ContestID",query="Select s from Submission s where s.StudentId=:studentID "
+			+ "and s.ContestId=:contestID"),
+	@NamedQuery(name="Submission.GetByStudentID", query="Select s from Submission s where s.StudentId=:studentID"),
+	@NamedQuery(name="Submission.GetByStudentID_ProblemID", query="Select s from Submission s where s.StudentId=:studentID "
+			+ "and s.ProblemId=:problemID"),
+	@NamedQuery(name="Submission.GetByContestID",query="Select s from Submission s where s.ContestId=:contestID")
+})
 public class Submission implements Serializable {
 
 	   
@@ -115,7 +125,4 @@ public class Submission implements Serializable {
 	public void setSourceCode(String sourceCode) {
 		SourceCode = sourceCode;
 	}
-
-   
-	
 }
