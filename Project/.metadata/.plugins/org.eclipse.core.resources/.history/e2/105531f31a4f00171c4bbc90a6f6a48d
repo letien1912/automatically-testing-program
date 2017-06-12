@@ -1,0 +1,14 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.SubmissionResult;
+import exceptionHandl.APT_ExceptionHandler;
+
+@Remote
+public interface I_SubmissionResultDAORemote {
+	public SubmissionResult GetSubmissionResultBySubmissionID(String submissionID) throws APT_ExceptionHandler;
+	public void CreateSubmission (SubmissionResult submissionResult) throws APT_ExceptionHandler;
+	public void EditSubmissionResult (SubmissionResult submissionResult) throws APT_ExceptionHandler;
+	public void DeleteSubmissionResult (SubmissionResult submissionResult) throws APT_ExceptionHandler;
+}

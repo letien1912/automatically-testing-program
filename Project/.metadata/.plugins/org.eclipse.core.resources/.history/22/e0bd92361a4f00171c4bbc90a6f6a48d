@@ -1,0 +1,37 @@
+package dataAccess;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import Entities.AcceptOutput;
+import exceptionHandl.APT_ExceptionHandler;
+
+/**
+ * Session Bean implementation class AcceptOutputDAO
+ */
+@Stateless
+@LocalBean
+public class AcceptOutputDAO implements I_AcceptOutputDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+    public AcceptOutputDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public void CreateAcceptOutput(AcceptOutput acceptOutput) throws APT_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<AcceptOutput> GetAllAcceptOutputBySubmission(int submissionID) throws APT_ExceptionHandler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

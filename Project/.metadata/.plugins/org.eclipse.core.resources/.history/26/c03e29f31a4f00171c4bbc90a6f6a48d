@@ -1,0 +1,14 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.Problem;
+import exceptionHandl.APT_ExceptionHandler;
+
+@Remote
+public interface I_ProblemDAORemote {
+	//Problems
+		public void CreateProblem(Problem problem) throws APT_ExceptionHandler;
+		public void EditProblem(Problem problem) throws APT_ExceptionHandler;
+		public void DeleteProblem(Problem problem) throws APT_ExceptionHandler;
+}

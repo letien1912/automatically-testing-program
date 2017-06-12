@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BusinessLogic&apos; to &apos;ATP_EJB&apos;" description="Rename resource &apos;BusinessLogic&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/BusinessLogic" name="ATP_EJB" stamp="1497233814079" updateReferences="true"/>
+</session>

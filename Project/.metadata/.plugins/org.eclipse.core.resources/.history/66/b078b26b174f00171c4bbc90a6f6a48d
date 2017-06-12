@@ -1,0 +1,37 @@
+package dataAccess;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import Entities.NotAcceptOutput;
+import exceptionHandel.ExceptionHandeler;
+
+/**
+ * Session Bean implementation class NotAcceptOutputDAO
+ */
+@Stateless
+@LocalBean
+public class NotAcceptOutputDAO implements I_NotAcceptOutputDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+    public NotAcceptOutputDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public void CreateNotAcceptOutput(NotAcceptOutput notAcceptOutput) throws ExceptionHandeler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<NotAcceptOutput> GetAllNotAcceptOutput(int submissionID) throws ExceptionHandeler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

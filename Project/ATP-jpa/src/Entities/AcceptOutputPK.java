@@ -1,7 +1,6 @@
 package Entities;
 
 import java.io.Serializable;
-import java.lang.String;
 
 /**
  * ID class for entity: AcceptOutput
@@ -10,7 +9,7 @@ import java.lang.String;
 public class AcceptOutputPK  implements Serializable {   
    
 	         
-	private String SubmissionId;         
+	private int SubmissionId;         
 	private int InputIndex;
 	private static final long serialVersionUID = 1L;
 
@@ -18,11 +17,11 @@ public class AcceptOutputPK  implements Serializable {
 
 	
 
-	public String getSubmissionId() {
+	public int getSubmissionId() {
 		return this.SubmissionId;
 	}
 
-	public void setSubmissionId(String SubmissionId) {
+	public void setSubmissionId(int SubmissionId) {
 		this.SubmissionId = SubmissionId;
 	}
 	
@@ -48,7 +47,7 @@ public class AcceptOutputPK  implements Serializable {
 		}
 		AcceptOutputPK other = (AcceptOutputPK) o;
 		return true
-			&& (getSubmissionId() == null ? other.getSubmissionId() == null : getSubmissionId().equals(other.getSubmissionId()))
+			&& getSubmissionId() ==  other.getSubmissionId() 
 			&& getInputIndex() == other.getInputIndex();
 	}
 	
@@ -58,7 +57,7 @@ public class AcceptOutputPK  implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (getSubmissionId() == null ? 0 : getSubmissionId().hashCode());
+		result = prime * result + getSubmissionId();
 		result = prime * result + getInputIndex();
 		return result;
 	}

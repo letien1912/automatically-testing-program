@@ -18,6 +18,7 @@ import javax.persistence.*;
                 query="SELECT t FROM Teacher t WHERE t.TeacherName = :name"),
     @NamedQuery(name="Teacher.findAllContestCreatedByTeacher",
     			query="SELECT c FROM Contest c WHERE c.TeacherId = :id"),
+    @NamedQuery(name="Teacher.GetByID",query="Select t from Teacher where t.TeacherId=:teacherID")
 }) 
 public class Teacher implements Serializable {
 

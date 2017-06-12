@@ -9,14 +9,16 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="NotAcceptOutput.GetBySubmissonID",query="Select n from NotAcceptOutput n where n.SubmissionId=:submissionID")
+})
 @IdClass(NotAcceptOutputPK.class)
 public class NotAcceptOutput implements Serializable {
 
 	   
 	@Id
 	@Column(name="SubmissionId")
-	private String SubmissionId;   
+	private int SubmissionId;   
 	@Id
 	private int InputIndex;
 	private String StudentOutput;
@@ -30,11 +32,11 @@ public class NotAcceptOutput implements Serializable {
 	public NotAcceptOutput() {
 		super();
 	}   
-	public String getSubmissionId() {
+	public int getSubmissionId() {
 		return this.SubmissionId;
 	}
 
-	public void setSubmissionId(String SubmissionId) {
+	public void setSubmissionId(int SubmissionId) {
 		this.SubmissionId = SubmissionId;
 	}   
 	public int getInputIndex() {

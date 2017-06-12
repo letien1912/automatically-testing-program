@@ -1,0 +1,12 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.NotAcceptOutput;
+import exceptionHandel.ExceptionHandeler;
+
+@Remote
+public interface I_NotAcceptOutputDAORemote {
+	public void CreateNotAcceptOutput(NotAcceptOutput notAcceptOutput) throws ExceptionHandeler;
+	
+}

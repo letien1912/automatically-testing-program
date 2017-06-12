@@ -1,0 +1,20 @@
+package dataAccess;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class ContestDAO
+ */
+@Stateless
+@LocalBean
+public class ContestDAO implements ContestDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+    public ContestDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

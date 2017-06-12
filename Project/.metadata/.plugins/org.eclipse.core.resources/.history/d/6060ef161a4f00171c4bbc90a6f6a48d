@@ -1,0 +1,11 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.AcceptOutput;
+import exceptionHandl.APT_ExceptionHandler;
+
+@Remote
+public interface I_AcceptOutputDAORemote {
+	public void CreateAcceptOutput(AcceptOutput acceptOutput) throws APT_ExceptionHandler;
+}

@@ -1,0 +1,41 @@
+package dataAccess;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import Entities.Teacher;
+import exceptionHandl.ATP_ExceptionHandler;
+
+/**
+ * Session Bean implementation class TeacherDAO
+ */
+@Stateless
+@LocalBean
+public class TeacherDAO implements I_TeacherDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+    public TeacherDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public void CreateTeacher(Teacher teacher) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Teacher GetTeacherInfo(String teacherID) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void UpdateTeacherInfo(Teacher teacher) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

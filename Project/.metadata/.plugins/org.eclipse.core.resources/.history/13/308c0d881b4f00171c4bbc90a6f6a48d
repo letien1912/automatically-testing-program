@@ -1,0 +1,12 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.Teacher;
+import exceptionHandl.ATP_ExceptionHandler;
+
+@Remote
+public interface I_TeacherDAORemote {
+	public void CreateTeacher(Teacher teacher) throws ATP_ExceptionHandler;
+	public Teacher GetTeacherInfo(String teacherID) throws ATP_ExceptionHandler;
+}

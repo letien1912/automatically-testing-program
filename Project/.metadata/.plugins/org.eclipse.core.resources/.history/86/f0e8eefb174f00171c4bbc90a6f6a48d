@@ -1,0 +1,43 @@
+package dataAccess;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import Entities.NotAcceptOutput;
+import exceptionHandel.ExceptionHandeler;
+
+/**
+ * Session Bean implementation class NotAcceptOutputDAO
+ */
+@Stateless
+@LocalBean
+public class NotAcceptOutputDAO implements I_NotAcceptOutputDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+	@PersistenceContext(unitName="Entities")
+	private EntityManager em;
+    public NotAcceptOutputDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public void CreateNotAcceptOutput(NotAcceptOutput notAcceptOutput) throws ExceptionHandeler {
+		// TODO Auto-generated method stub
+		em.getTransaction().begin();
+		em.persist(notAcceptOutput);
+		em.getTransaction().commit();
+	}
+
+	@Override
+	public List<NotAcceptOutput> GetAllNotAcceptOutputBySubmission(int submissionID) throws ExceptionHandeler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -11,7 +11,10 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="Contest.GetAll",query="Select c from Contest c"),
+	@NamedQuery(name="Contest.GetByID",query="Select c from Contest c where c.ContestId=:contestID")
+})
 public class Contest implements Serializable {
 
 	@Id

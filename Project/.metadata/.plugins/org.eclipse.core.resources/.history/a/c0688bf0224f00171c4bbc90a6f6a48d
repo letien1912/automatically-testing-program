@@ -1,0 +1,59 @@
+package dataAccess;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+
+import Entities.Contest;
+import exceptionHandl.ATP_ExceptionHandler;
+
+/**
+ * Session Bean implementation class ContestDAO
+ */
+@Stateless
+@LocalBean
+public class ContestDAO implements I_ContestDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+	private EntityManager em;
+    public ContestDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public void CreateContest(Contest contest) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void DeleteContest(String contestID) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void EditContest(Contest contest) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Contest> GetAllContest() throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contest GetContestByID(String contestID) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    
+
+}

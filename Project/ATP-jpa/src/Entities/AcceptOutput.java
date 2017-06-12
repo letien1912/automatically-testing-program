@@ -9,14 +9,16 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="AcceptOutput.GetAllBySubmission",query="select a from AcceptOutput a where a.SubmissionId=:submissionID")
+})
 @IdClass(AcceptOutputPK.class)
 public class AcceptOutput implements Serializable {
 
 	   
 	@Id
 	@Column(name="SubmissionId")
-	private String SubmissionId;   
+	private int SubmissionId;   
 	@Id
 	private int InputIndex;
 	private String StudentOutput;
@@ -29,11 +31,11 @@ public class AcceptOutput implements Serializable {
 	public AcceptOutput() {
 		super();
 	}   
-	public String getSubmissionId() {
+	public int getSubmissionId() {
 		return this.SubmissionId;
 	}
 
-	public void setSubmissionId(String SubmissionId) {
+	public void setSubmissionId(int SubmissionId) {
 		this.SubmissionId = SubmissionId;
 	}   
 	public int getInputIndex() {

@@ -4,19 +4,13 @@
 <fullyQualifiedTypeName name="Entities.Student_ContestDetail"/>
 <fullyQualifiedTypeName name="javax.inject.Named"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
-<fullyQualifiedTypeName name="Entities.AcceptOutput"/>
-<fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
-<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.regexp.internal.recompile"/>
-<fullyQualifiedTypeName name="Entities.Teacher"/>
 <fullyQualifiedTypeName name="Entities.Student"/>
-<fullyQualifiedTypeName name="Entities.Contest"/>
 <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
@@ -27,7 +21,6 @@
 <fullyQualifiedTypeName name="ErrorHandler.ProblemHandlingException"/>
 <fullyQualifiedTypeName name="ErrorHandler.ProblemHandlingException.ErrorCode"/>
 <fullyQualifiedTypeName name="Utilities.CodeFileWritting"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="Entities.Input"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
 <fullyQualifiedTypeName name="java.lang.ProcessBuilder"/>
@@ -53,4 +46,18 @@
 <fullyQualifiedTypeName name="ErrorHandling.ProblemHandlingException"/>
 <fullyQualifiedTypeName name="UnitTest.URLHandlerTest"/>
 <fullyQualifiedTypeName name="Utilities.URLHandler"/>
+<fullyQualifiedTypeName name="javax.faces.context.ExceptionHandler"/>
+<fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
+<fullyQualifiedTypeName name="exceptionHandel.ExceptionHandeler"/>
+<fullyQualifiedTypeName name="exceptionHandl.APT_ExceptionHandler"/>
+<fullyQualifiedTypeName name="Entities.AcceptOutput"/>
+<fullyQualifiedTypeName name="dataAccess.I_TeacherDAORemote"/>
+<fullyQualifiedTypeName name="Entities.Teacher"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
+<fullyQualifiedTypeName name="exceptionHandl.ATP_ExceptionHandler"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
+<fullyQualifiedTypeName name="Entities.Contest"/>
 </qualifiedTypeNameHistroy>
