@@ -9,7 +9,13 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="Student_ContestDetail.GetAll",query="Select s from Student_ContestDetail s"),
+	@NamedQuery(name="GetStudent_ContestDetail.GetByID", query="Select s from Student_ContestDetail s where s.ContestID=:contestID "
+			+ "and s.StudentID=:studentID" ),
+	@NamedQuery(name="GetStudent_ContestDetail.GetByContestID", query="Select s from Student_ContestDetail s where s.ContestID=:contestID"),
+	@NamedQuery(name="GetStudent_ContestDetail.GetByStudentID", query="Select s from Student_ContestDetail s where s.StudentID=:studentID")
+})
 public class Student_ContestDetail implements Serializable {
 
 	   

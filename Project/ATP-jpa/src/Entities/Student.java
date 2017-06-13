@@ -12,7 +12,11 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name="Student.GetByID",query="Select s from Student s where s.StudentId=:studentID"),
+	@NamedQuery(name="Student.GetAll",query="Select s from Student s"),
+	@NamedQuery(name="Student.GetByUserName",query="Select s from Student s where s.UserName=:userName")
+})
 public class Student implements Serializable {
 
 	   
@@ -24,6 +28,7 @@ public class Student implements Serializable {
 	private String UserName;
 	@Column(nullable = false)
 	private String Password;
+	private int IsActive;
 	private static final long serialVersionUID = 1L;
 	
 	@OneToMany(mappedBy = "Student")
@@ -65,6 +70,12 @@ public class Student implements Serializable {
 	}
 	public void setPassword(String password) {
 		Password = password;
+	}
+	public int getIsActive() {
+		return IsActive;
+	}
+	public void setIsActive(int isActive) {
+		IsActive = isActive;
 	}
 	
    

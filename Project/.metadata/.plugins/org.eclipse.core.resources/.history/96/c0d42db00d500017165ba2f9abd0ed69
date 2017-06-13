@@ -1,0 +1,103 @@
+package dataAccess;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import Entities.Student;
+import exceptionHandl.ATP_ExceptionHandler;
+
+/**
+ * Session Bean implementation class StudentDAO
+ */
+@Stateless
+@LocalBean
+public class StudentDAO implements I_StudentDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+	@PersistenceContext(unitName="Entities")
+	private EntityManager em;
+    public StudentDAO() {
+        // TODO Auto-generated constructor stub
+    }
+	@Override
+	public void CreateStudent(Student student) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		try {
+			em.getTransaction().begin();
+			em.persist(student);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ATP_ExceptionHandler(e.getMessage(), 32, "SudentDAO", "Create Student Fail");
+		}
+	}
+	@Override
+	public void DeleteStudent(Student student) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		try {
+			em.getTransaction().begin();
+			em.remove(em.merge(student));
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ATP_ExceptionHandler(e.getMessage(), 45, "SudentDAO", "Delete Student Fail");
+		}
+	}
+
+	@Override
+	public void EditStudent(Student student) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		try {
+			em.getTransaction().begin();
+			em.merge(student);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ATP_ExceptionHandler(e.getMessage(), 58, "SudentDAO", "Edit Student Fail");
+		}
+	}
+
+	@Override
+	public Student GetStudentByID(String studentID) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		try {
+			return em.createNamedQuery("Student.GetByID",Student.class)
+					.setParameter("studentID", studentID)
+					.getSingleResult();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ATP_ExceptionHandler(e.getMessage(), 63, "SudentDAO", "Get Student By ID fail");
+		}
+	}
+
+	@Override
+	public List<Student> GetAllStudent() throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		try {
+			return em.createNamedQuery("Student.GetAll",Student.class)
+					.getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ATP_ExceptionHandler(e.getMessage(), 85, "SudentDAO", "Get Student By ID fail");
+		}
+	}
+	@Override
+	public Student GetStudentByUserName(String userName) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		try {
+			return em.createNamedQuery("Student.GetByUserName",Student.class)
+					.setParameter("userName", userName)
+					.getSingleResult();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new ATP_ExceptionHandler(systemErrorMessage, line, errorClass, customMessage)
+		}
+	}
+
+}

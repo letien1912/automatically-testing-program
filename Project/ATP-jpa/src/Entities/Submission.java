@@ -36,6 +36,7 @@ public class Submission implements Serializable {
 	private int ContestSubmitTime;
 	private int ProblemSubmitTime;
 	private String Status;
+	private String Message;
 	private String SourceCode;
 	private static final long serialVersionUID = 1L;
 	@OneToOne
@@ -125,4 +126,11 @@ public class Submission implements Serializable {
 	public void setSourceCode(String sourceCode) {
 		SourceCode = sourceCode;
 	}
+	public String getMessage() {
+		return Message;
+	}
+	public void setMessage(String message) {
+		Message = message;
+	}
+	
 }

@@ -1,0 +1,32 @@
+package dataAccess;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import exceptionHandl.ATP_ExceptionHandler;
+
+/**
+ * Session Bean implementation class MarkingServerConnection
+ */
+@Stateless
+@LocalBean
+public class MarkingServerConnection implements I_MarkingServerConnectionRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public MarkingServerConnection() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public HttpURLConnection GetConnection(String serverUrl) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		URL url = new URL(serverUrl);
+		return null;
+	}
+
+}

@@ -1,0 +1,8 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+@Remote
+public interface I_MarkingServerConnectionRemote {
+	
+}

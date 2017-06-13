@@ -1,0 +1,97 @@
+package Entities;
+
+import java.io.Serializable;
+import java.lang.String;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Student_ContestDetail
+ *
+ */
+@Entity
+@NamedQueries({
+	@NamedQuery(name="Student_ContestDetail.GetAll",query="Select s from Student_ContestDetail s"),
+	@NamedQuery(name="GetStudent_ContestDetail.GetByID", query="Select s from Student_ContestDetail s where s.ContestID=:contestID "
+			+ "and s.StudentID=:studentID" ),
+	@NamedQuery(name="GetStudent_ContestDetail.GetByContestID", query="Select s from Student_ContestDetail s where s.ContestID=:contestID"),
+	@NamedQuery(name="GetStudent_ContestDetail.GetByContestID", query="Select s from Student_ContestDetail s where s.StudentID=:studentID")
+})
+public class Student_ContestDetail implements Serializable {
+
+	   
+	@Id
+	private String ContestDetailID;
+	@Column(name="ContestID", nullable = false)
+	private String ContestID;
+	@Column(name="StudentID", nullable = false)
+	private String StudentID;
+	private float TotalResult;
+	private float TotalTime;
+	private int Rank;
+	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	@JoinColumn(name="StudentID", insertable = false, updatable = false)
+	private Student Student;
+	@ManyToOne
+	@JoinColumn(name="ContestID", insertable = false, updatable = false)
+	private Contest Contest;
+	
+	
+	public Student_ContestDetail(String contestDetailID, String contestID, String studentID, float totalResult,
+			float totalTime, int rank) {
+		super();
+		ContestDetailID = contestDetailID;
+		ContestID = contestID;
+		StudentID = studentID;
+		TotalResult = totalResult;
+		TotalTime = totalTime;
+		Rank = rank;
+	}
+	public Student_ContestDetail() {
+		super();
+	}   
+	public String getContestDetailID() {
+		return this.ContestDetailID;
+	}
+
+	public void setContestDetailID(String ContestDetailID) {
+		this.ContestDetailID = ContestDetailID;
+	}   
+	public String getContestID() {
+		return this.ContestID;
+	}
+
+	public void setContestID(String ContestID) {
+		this.ContestID = ContestID;
+	}   
+	public String getStudentID() {
+		return this.StudentID;
+	}
+
+	public void setStudentID(String StudentID) {
+		this.StudentID = StudentID;
+	}   
+	public float getTotalResult() {
+		return this.TotalResult;
+	}
+
+	public void setTotalResult(float TotalResult) {
+		this.TotalResult = TotalResult;
+	}   
+	public float getTotalTime() {
+		return this.TotalTime;
+	}
+
+	public void setTotalTime(float TotalTime) {
+		this.TotalTime = TotalTime;
+	}   
+	public int getRank() {
+		return this.Rank;
+	}
+
+	public void setRank(int Rank) {
+		this.Rank = Rank;
+	}
+   
+}

@@ -5,3 +5,7 @@
 1497236282829	Rename type 'APT_ExceptionHandler'
 1497236413337	Rename type 'TeacherDAORemote'
 1497236989238	Rename type 'ContestDAORemote'
+1497260599072	Rename type 'Student_ContestDAORemote'
+1497262640331	Rename type 'StudentDAORemote'
+1497264117325	Delete element
+1497332516689	Rename type 'MarkingServerConnectionRemote'

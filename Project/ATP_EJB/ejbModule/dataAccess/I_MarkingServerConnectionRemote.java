@@ -1,0 +1,13 @@
+package dataAccess;
+
+import java.net.HttpURLConnection;
+
+import javax.ejb.Remote;
+
+import exceptionHandl.ATP_ExceptionHandler;
+
+@Remote
+public interface I_MarkingServerConnectionRemote {
+	public HttpURLConnection GetConnection(String serverUrl) throws ATP_ExceptionHandler;
+	public void CloseConnection (HttpURLConnection connection) throws ATP_ExceptionHandler;
+}

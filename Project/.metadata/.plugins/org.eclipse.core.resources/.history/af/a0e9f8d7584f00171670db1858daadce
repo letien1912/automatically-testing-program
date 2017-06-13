@@ -1,0 +1,54 @@
+package dataAccess;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import Entities.Student;
+import exceptionHandl.ATP_ExceptionHandler;
+
+/**
+ * Session Bean implementation class StudentDAO
+ */
+@Stateless
+@LocalBean
+public class StudentDAO implements I_StudentDAORemote {
+
+    /**
+     * Default constructor. 
+     */
+    public StudentDAO() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public void CreateStudent(Student student) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void DeleteStudent(Student student) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void EditStudent(Student student) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Student GetStudentInfo(String studentID) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void LockStudent(String studentID) throws ATP_ExceptionHandler {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

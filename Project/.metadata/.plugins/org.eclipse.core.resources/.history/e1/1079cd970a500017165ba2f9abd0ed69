@@ -1,0 +1,15 @@
+package accountServices;
+
+import javax.ejb.EJB;
+import javax.ws.rs.Path;
+
+import dataAccess.I_StudentDAORemote;
+
+@Path("/student")
+public class Student {
+	@EJB
+	private I_StudentDAORemote studentDAO;
+	public Student(){
+		
+	}
+}

@@ -1,0 +1,10 @@
+package dataAccess;
+
+import javax.ejb.Remote;
+
+import Entities.Student_ContestDetail;
+
+@Remote
+public interface I_Student_ContestDAORemote {
+	public void CreateStudentContestDetail(Student_ContestDetail student_ContestDetail)
+}
