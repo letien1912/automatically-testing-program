@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.sun.istack.internal.Nullable"/>
-<fullyQualifiedTypeName name="Entities.Student_ContestDetail"/>
-<fullyQualifiedTypeName name="javax.inject.Named"/>
-<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
@@ -21,20 +17,15 @@
 <fullyQualifiedTypeName name="ErrorHandler.ProblemHandlingException"/>
 <fullyQualifiedTypeName name="ErrorHandler.ProblemHandlingException.ErrorCode"/>
 <fullyQualifiedTypeName name="Utilities.CodeFileWritting"/>
-<fullyQualifiedTypeName name="Entities.Input"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
 <fullyQualifiedTypeName name="java.lang.ProcessBuilder"/>
-<fullyQualifiedTypeName name="Entities.Output"/>
-<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ThreadPoolExecutor"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.lang.Process"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
-<fullyQualifiedTypeName name="Entities.Problem"/>
 <fullyQualifiedTypeName name="javax.print.attribute.TextSyntax"/>
 <fullyQualifiedTypeName name="junit.framework.TestCase"/>
 <fullyQualifiedTypeName name="UnitTest.ProblemCompilerTest"/>
@@ -47,17 +38,26 @@
 <fullyQualifiedTypeName name="UnitTest.URLHandlerTest"/>
 <fullyQualifiedTypeName name="Utilities.URLHandler"/>
 <fullyQualifiedTypeName name="javax.faces.context.ExceptionHandler"/>
-<fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
 <fullyQualifiedTypeName name="exceptionHandel.ExceptionHandeler"/>
 <fullyQualifiedTypeName name="exceptionHandl.APT_ExceptionHandler"/>
-<fullyQualifiedTypeName name="Entities.AcceptOutput"/>
 <fullyQualifiedTypeName name="dataAccess.I_TeacherDAORemote"/>
 <fullyQualifiedTypeName name="Entities.Teacher"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
 <fullyQualifiedTypeName name="exceptionHandl.ATP_ExceptionHandler"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
 <fullyQualifiedTypeName name="Entities.Contest"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Entities.Output"/>
+<fullyQualifiedTypeName name="Entities.Problem"/>
+<fullyQualifiedTypeName name="Entities.MarkingData"/>
+<fullyQualifiedTypeName name="CodeHandling.ProblemComparator"/>
+<fullyQualifiedTypeName name="java.lang.Process"/>
+<fullyQualifiedTypeName name="Entities.Input"/>
+<fullyQualifiedTypeName name="CodeHandling.ProblemStatus"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
+<fullyQualifiedTypeName name="Entities.AcceptOutput"/>
 </qualifiedTypeNameHistroy>

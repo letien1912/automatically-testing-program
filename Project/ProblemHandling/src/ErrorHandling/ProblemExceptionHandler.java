@@ -1,6 +1,6 @@
 package ErrorHandling;
 
-public class ProblemHandlingException extends Exception {
+public class ProblemExceptionHandler extends Exception {
 
 	/**
 	 * 
@@ -10,20 +10,20 @@ public class ProblemHandlingException extends Exception {
 	private ErrorCode errorCode = ErrorCode.OK;
 	private String errorParam;
 
-	public ProblemHandlingException() {
+	public ProblemExceptionHandler() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProblemHandlingException(String message) {
+	public ProblemExceptionHandler(String message) {
 		super(message);
 	}
 
-	public ProblemHandlingException(ErrorCode errorCode) {
+	public ProblemExceptionHandler(ErrorCode errorCode) {
 		super();
 		this.errorCode = errorCode;
 	}
 
-	public ProblemHandlingException(ErrorCode errorCode, String errorParam) {
+	public ProblemExceptionHandler(ErrorCode errorCode, String errorParam) {
 		super();
 		this.errorCode = errorCode;
 		this.errorParam = errorParam;

@@ -4,25 +4,28 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import Entities.MarkingData;
 import Entities.Submission;
-import ErrorHandling.ProblemHandlingException;
-import ErrorHandling.ProblemHandlingException.ErrorCode;
+import ErrorHandling.ProblemExceptionHandler;
+import ErrorHandling.ProblemExceptionHandler.ErrorCode;
 import Utilities.URLHandler;
 
 public class ProblemCompiler {
-	private Submission submission;
+	private MarkingData markingData;
 	private String fileContainer;
 	private boolean isCompileSusscess;
 	private String errorCompileContain;
-	
-	public ProblemCompiler(Submission submission) {
+	private ProblemStatus problemStatus = ProblemStatus.DEFAULT;
+	public ProblemCompiler(MarkingData markingData) {
 		super();
-		this.submission = submission;
+		this.markingData = markingData;
 	}
 
-	public void compile() throws ProblemHandlingException {
-		String problemName = submission.getSubmissionId();
-		fileContainer = URLHandler.writeFile(submission.getSourceCode(), problemName);
+	public void compile() throws ProblemExceptionHandler {
+		fileContainer = URLHandler.writeFile(markingData.getSourceCode(), markingData.getSubmissionID()+"");
+		String problemName = URLHandler.getCompliedFolder(markingData.getSubmissionID()+"");
+		
+		System.out.println(fileContainer);
 		try {
 			Process process = new ProcessBuilder("g++", fileContainer, "-o", problemName).start();
 			BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
@@ -34,7 +37,7 @@ public class ProblemCompiler {
 				isCompileSusscess = false;
 
 		} catch (IOException e) {
-			throw new ProblemHandlingException(ErrorCode.COMPILER_ERROR, e.getMessage());
+			throw new ProblemExceptionHandler(ErrorCode.COMPILER_ERROR, e.getMessage());
 		}
 	}
 	
@@ -52,10 +55,10 @@ public class ProblemCompiler {
 		return errorCompile;
 	}
 	
-	public String getCompiledURL() throws ProblemHandlingException {
+	public String getCompiledURL() throws ProblemExceptionHandler {
 		if (isCompileSusscess)
-			return URLHandler.getCompiledURL(submission.getSubmissionId());
-		throw new ProblemHandlingException(ErrorCode.COMPILE_UNSUCCESS, getErrorCompileContain());
+			return URLHandler.getCompiledFile(markingData.getSubmissionID()+"");
+		throw new ProblemExceptionHandler(ErrorCode.COMPILE_UNSUCCESS, getErrorCompileContain());
 	}
 
 	public boolean isCompileSusscess() {
@@ -67,6 +70,10 @@ public class ProblemCompiler {
 			return errorCompileContain;
 		}
 		return "";
+	}
+	
+	public ProblemStatus getProblemStatus() {
+		return problemStatus;
 	}
 
 }
