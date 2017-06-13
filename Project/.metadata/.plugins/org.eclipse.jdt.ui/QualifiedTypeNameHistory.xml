@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
+=======
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.regexp.internal.recompile"/>
+<fullyQualifiedTypeName name="Entities.Student"/>
+<fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream.PutField"/>
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995
 <fullyQualifiedTypeName name="CodeHandler.ProblemCompiling"/>
 <fullyQualifiedTypeName name="Entities.SubmissionResult"/>
 <fullyQualifiedTypeName name="ErrorHandler.ProblemHandlingException"/>
 <fullyQualifiedTypeName name="ErrorHandler.ProblemHandlingException.ErrorCode"/>
 <fullyQualifiedTypeName name="Utilities.CodeFileWritting"/>
-<fullyQualifiedTypeName name="Entities.Input"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
 <fullyQualifiedTypeName name="java.lang.ProcessBuilder"/>
-<fullyQualifiedTypeName name="Entities.Output"/>
-<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ThreadPoolExecutor"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.lang.Process"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
-<fullyQualifiedTypeName name="Entities.Problem"/>
 <fullyQualifiedTypeName name="javax.print.attribute.TextSyntax"/>
 <fullyQualifiedTypeName name="junit.framework.TestCase"/>
 <fullyQualifiedTypeName name="UnitTest.ProblemCompilerTest"/>
@@ -31,14 +40,15 @@
 <fullyQualifiedTypeName name="UnitTest.URLHandlerTest"/>
 <fullyQualifiedTypeName name="Utilities.URLHandler"/>
 <fullyQualifiedTypeName name="javax.faces.context.ExceptionHandler"/>
-<fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
 <fullyQualifiedTypeName name="exceptionHandel.ExceptionHandeler"/>
 <fullyQualifiedTypeName name="exceptionHandl.APT_ExceptionHandler"/>
-<fullyQualifiedTypeName name="Entities.AcceptOutput"/>
 <fullyQualifiedTypeName name="dataAccess.I_TeacherDAORemote"/>
 <fullyQualifiedTypeName name="Entities.Teacher"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="Entities.Contest"/>
 <fullyQualifiedTypeName name="Entities.Student_ContestDetail"/>
+=======
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995
 <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
@@ -51,6 +61,7 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="exceptionHandl.ATP_ExceptionHandler"/>
 <fullyQualifiedTypeName name="Entities.Student"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
@@ -60,4 +71,19 @@
 <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
 <fullyQualifiedTypeName name="com.sun.media.jfxmedia.Media"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+=======
+<fullyQualifiedTypeName name="Entities.Contest"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Entities.Output"/>
+<fullyQualifiedTypeName name="Entities.Problem"/>
+<fullyQualifiedTypeName name="Entities.MarkingData"/>
+<fullyQualifiedTypeName name="CodeHandling.ProblemComparator"/>
+<fullyQualifiedTypeName name="java.lang.Process"/>
+<fullyQualifiedTypeName name="Entities.Input"/>
+<fullyQualifiedTypeName name="CodeHandling.ProblemStatus"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="Entities.NotAcceptOutput"/>
+<fullyQualifiedTypeName name="Entities.AcceptOutput"/>
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995
 </qualifiedTypeNameHistroy>

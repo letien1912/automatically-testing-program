@@ -17,6 +17,8 @@ public class MarkingData {
 	private int MemoryLimit;
 	private List<Input> ListInput;
 	private List<Output> ListOutput;
+	private String SourceCode;
+	
 	public MarkingData(int submissionID, float timeLimit, int memoryLimit, List<Input> listInput,
 			List<Output> listOutput) {
 		SubmissionID = submissionID;
@@ -58,6 +60,12 @@ public class MarkingData {
 	}
 	public void setListOutput(List<Output> listOutput) {
 		ListOutput = listOutput;
+	}
+	public String getSourceCode() {
+		return SourceCode;
+	}
+	public void setSourceCode(String sourceCode) {
+		SourceCode = sourceCode;
 	}
 	
 	

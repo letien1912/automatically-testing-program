@@ -28,6 +28,16 @@ public class AcceptOutput implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="SubmissionId", insertable = false, updatable = false)
 	private SubmissionResult SubmissionResult;
+	
+	public AcceptOutput(int submissionId, int inputIndex, String studentOutput, String teacherOutput,
+			Entities.SubmissionResult submissionResult) {
+		super();
+		SubmissionId = submissionId;
+		InputIndex = inputIndex;
+		StudentOutput = studentOutput;
+		TeacherOutput = teacherOutput;
+		SubmissionResult = submissionResult;
+	}
 	public AcceptOutput() {
 		super();
 	}   

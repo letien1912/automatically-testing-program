@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 #Tue Jun 13 12:11:21 ICT 2017
 vl=0 \= failed, 1 \= successful
 l=Server Runtime ID
 ct=server
 d=1497330681217
+=======
+#Tue Jun 13 13:12:12 ICT 2017
+vl=0 \= failed, 1 \= successful
+l=Server Runtime ID
+ct=server
+d=1497334332779
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995
 c=0
 cmp=server
 a=new

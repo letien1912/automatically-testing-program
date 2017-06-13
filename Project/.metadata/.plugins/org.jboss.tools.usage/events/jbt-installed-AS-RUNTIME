@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 #Tue Jun 13 22:40:53 ICT 2017
 l=Installed plugins\: AS-RUNTIME
 ct=jbt
 d=1497368453057
 c=3
+=======
+#Tue Jun 13 18:42:03 ICT 2017
+l=Installed plugins\: AS-RUNTIME
+ct=jbt
+d=1497354123493
+c=2
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995
 cmp=usage
 a=installed
 cl=AS-RUNTIME

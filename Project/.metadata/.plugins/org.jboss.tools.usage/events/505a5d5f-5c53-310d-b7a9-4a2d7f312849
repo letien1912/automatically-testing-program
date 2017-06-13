@@ -1,11 +1,23 @@
+<<<<<<< HEAD
 #Tue Jun 13 12:41:41 ICT 2017
 vl=How many times the 'Finish' button pressed during the day
 l=Wizard class name
 ct=jbt
 d=1497332501341
+=======
+#Tue Jun 13 13:12:34 ICT 2017
+vl=How many times the 'Finish' button pressed during the day
+l=Wizard class name
+ct=jbt
+d=1497334354553
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995
 c=0
 cmp=usage
 a=finishWizard
 cl=org.eclipse.jst.ejb.ui.internal.wizard.AddSessionBeanWizard
 v=2.2.4
+<<<<<<< HEAD
 s=1
+=======
+s=0
+>>>>>>> 6e35c1fe0f029e6b82101900b8ab80d3ab1bb995

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
   <module moduleId="org.eclipse.jst.jee.server:ATP_EAR" serverId="Red Hat JBoss EAP 7.x1497076845789"/>
+  <module moduleId="org.eclipse.jst.jee.server:APT_WebServer" serverId="Red Hat JBoss EAP 7.x1497080800775"/>
 </modules>
